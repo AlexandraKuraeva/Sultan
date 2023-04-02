@@ -1,0 +1,92 @@
+[
+  {
+	"id": "0",
+    "barcode": "4fghfgh7548",
+    "imageProduct": "https://lenino-torg.ru/uploads/product/2100/2101/thumbs/70_j8WSRr-8i32UKBlrUzI2k2.jpeg",
+    "title": "ШfghhTIMOTEI",
+    "types": "",
+    "size": "400",
+    "price": "102",
+    "description": "Шампунь для волос TIMOTEI МЕРЦАЮЩИЙ БЛЕСК 400 мл бренда Timotei . Артикул товара в каталоге 56718. Данный товар представлен в разделе Шампуни категории Средства для ухода за волосами по цене 102 руб. Выбирая шампуни, обращайте внимание на основные характеристики, такие как объём.",
+    "brand": "Timotei",
+    "manufacturer": "Timotei",
+    "category": 4
+  },
+  {
+    "id": "1",
+    "barcode": "4604049097548",
+    "imageProduct": "https://homemos.ru/upload/resize_cache/iblock/402/340_340_140cd750bba9870f18aada2478b24840a/4028a80873f6e5553a8e7623f7fb02f0.jpg",
+    "title": "Дося / Dosia - Стиральный порошок Белый снег",
+    "types": "вес",
+    "size": "365 гр",
+    "price": 49,
+    "description": "Стиральный порошок Dosia Active 3 Белый снег - универсальное средство для стирки различных вещей, которое предназначено для ручной стирки.",
+    "brand": "Dosia",
+    "manufacturer": "Reckitt Benckiser",
+    "category": 8
+  },
+  {
+    "id": "2",
+    "barcode": "4604049097548",
+    "imageProduct": "https://global-vitamins.ru/upload/iblock/f50/f50e96e9eda6a669f482490605bc6834.jpg",
+    "title": "Зубная паста Доктор заяц со вкусом клубники",
+    "types": "объем",
+    "size": "50 мл",
+    "price": 49,
+    "description": "Детская зубная паста Colgate 'Доктор заяц' со вкусом клубники - с удовольствием защищает зубы от кариеса.Содержит проверенную Colgate защиту с фтором, более эффективно предотвращает кариес.",
+    "brand": "Colgate",
+    "manufacturer": "Колгейт Палмолив",
+    "category": 9
+  },
+  {
+    "id": "3",
+    "barcode": "4811230018583",
+    "imageProduct": "https://www.wbc-c.ru/system/goods/general_images/000/043/552/large/Opolaskivatel__Organicheskie_travy.jpg",
+    "title": "Ополаскиватель для полости рта 'Органические травы'",
+    "types": "объем",
+    "size": "250 мл",
+    "price": 499,
+    "description": "Органические экстракты ромашки, календулы и солодки оказывают успокаивающее действие на полость рта, способствуют укреплению дёсен.",
+    "brand": " MODUM",
+    "manufacturer": "Парфюмерно-косметическая фабрика",
+    "category": 9
+  },
+  {
+    "id": "4",
+    "barcode": "4811230018583",
+    "imageProduct": "https://avatars.mds.yandex.net/get-mpic/1603927/img_id30998355874346674.png/9",
+    "title": "Мексидол Дент Профешнл",
+    "types": "объем",
+    "size": "250 мл",
+    "price": 450,
+    "description": "Уникальная рецептура ополаскивателя для полости рта  эффективно предупреждает развитие воспалительных процессов в полости рта, снижает кровоточивость дёсен, способствует ранозаживляющему действию и поддерживает естественную белизну зубов.",
+    "brand": " MEXIDOL",
+    "manufacturer": "MEXIDOL"
+  },
+  {
+    "id": "5",
+    "barcode": "4604049097548",
+    "imageProduct": "https://экономь.рф/images/thumbnails/270/270/detailed/14/173_bvwt-nm.jpg",
+    "title": "Шампунь Schauma Объем и Свежесть ",
+    "types": "объем",
+    "size": "380 мл",
+    "price": 250,
+    "description": "Шампунь Schauma Объем и Свежесть разработан для тонких, но при этом жирных волос. Уход без утяжеления — до 90% больше объема и свежести. Средство заполняет волосы изнутри для невероятного объема и свежести на 24 часа. Формула с минерально-коллагеновым комплексом укрепляет локоны от корней до кончиков.",
+    "brand": "Schauma",
+    "manufacturer": "Schauma",
+    "category": 4
+  },
+  {
+    "id": "6",
+    "barcode": "4604049097548",
+    "imageProduct": "https://lenino-torg.ru/uploads/product/2100/2101/thumbs/70_j8WSRr-8i32UKBlrUzI2k2.jpeg",
+    "title": "Шампунь для волос TIMOTEI",
+    "types": "",
+    "size": "400",
+    "price": "102",
+    "description": "Шампунь для волос TIMOTEI МЕРЦАЮЩИЙ БЛЕСК 400 мл бренда Timotei . Артикул товара в каталоге 56718. Данный товар представлен в разделе Шампуни категории Средства для ухода за волосами по цене 102 руб. Выбирая шампуни, обращайте внимание на основные характеристики, такие как объём.",
+    "brand": "Timotei",
+    "manufacturer": "Timotei",
+    "category": 4
+  }
+]
