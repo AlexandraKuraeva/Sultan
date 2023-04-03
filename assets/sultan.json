@@ -9,7 +9,7 @@
     "price": "245",
     "description": " Гель для бритья не сушит и не стягивает, в его составе нет парабенов. Он выпускается без спирта и других сильных аллергенов, которые могут спровоцировать негативную реакцию организма. ",
     "brand": "Gillette",
-    "manufacturer": "Timotei",
+    "manufacturer": "Gillette",
     "category": 6
   },
   {
@@ -89,7 +89,7 @@
     "manufacturer": "Timotei",
     "category": 4
   },
-	{
+  {
     "id": "7",
     "barcode": "4604049097548",
     "imageProduct": "https://main-cdn.sbermegamarket.ru/hlr-system/535/752/808/915/154/8/100002568231b0.jpg",
@@ -115,7 +115,7 @@
     "manufacturer": "OrganicZone",
     "category": 0
   },
-	{
+  {
     "id": "9",
     "barcode": "46440404908",
     "imageProduct": "https://alania-market.ru/image/cache/catalog/sredstva-dlya-vannoy-i-dusha/skraby-pilingi/9/11472836-1-640x640.jpeg",
@@ -128,7 +128,7 @@
     "manufacturer": "Чистая Линия",
     "category": 0
   },
-		{
+  {
     "id": "10",
     "barcode": "46440404908",
     "imageProduct": "https://tvoydom.ru/photos/1001754199/1001754199.jpg",
@@ -141,7 +141,7 @@
     "manufacturer": "Бархатные ручки",
     "category": 1
   },
-{
+  {
     "id": "11",
     "barcode": "4226440404908",
     "imageProduct": "https://avatars.mds.yandex.net/get-mpic/1943683/img_id1669561568327582667.jpeg/9",
@@ -154,7 +154,7 @@
     "manufacturer": "SVOBODA",
     "category": 1
   },
-	{
+  {
     "id": "12",
     "barcode": "42264404049",
     "imageProduct": "https://static.beloris.ru/content/catalog_image/377705/src/Screenshot_4.png.jpg",
@@ -167,7 +167,7 @@
     "manufacturer": "Palmolive",
     "category": 1
   },
-		{
+  {
     "id": "13",
     "barcode": "4226440405549",
     "imageProduct": "https://main-cdn.sbermegamarket.ru/hlr-system/119/523/521/472/710/32/100002570360b0.jpg",
@@ -180,7 +180,7 @@
     "manufacturer": "ЛАБОРАТОРИЯ ПРИРОДЫ",
     "category": 2
   },
-			{
+  {
     "id": "14",
     "barcode": "4556440405549",
     "imageProduct": "https://www.krason.ru/i/Product/66131",
@@ -193,7 +193,56 @@
     "manufacturer": "Himalaya",
     "category": 3
   },
-	
-	
-	
+  {
+    "id": "15",
+    "barcode": "4556440405549",
+    "imageProduct": "https://uteka.ru/media/1024/3/ce/3cea908f9250b96ca369f011eb8d105e.jpg",
+    "title": "NIVEA SUN МАСЛО-СПРЕЙ ДЛЯ ЗАГАРА SPF 3",
+    "types": "объем",
+    "size": "200 мл",
+    "price": "1050",
+    "description": "Солнцезащитное масло-спрей для загара Защита и Загар SPF 30 от Nivea Sun создано для красивого и ровного загара.",
+    "brand": "Nivea Sun",
+    "manufacturer": "Nivea Sun",
+    "category": 5
+  },
+  {
+    "id": "16",
+    "barcode": "4556440405549",
+    "imageProduct": "https://www.mymegamarket.ru/upload/iblock/2be/2be4f7520c630b4a49aacb5511ca3a1a.jpg",
+    "title": "Подарочный набор Palmolive Мицелярный уход Гель для душа + Мыло + ПОДАРОК Мочалка, женский",
+    "types": "",
+    "size": "",
+    "price": "1200",
+    "description": "PALMOLIVE Подарочный набор Мицеллярный уход – лучший подарок для тех, кто предпочитает бережно заботиться о своей коже каждый день. Компоненты геля для душа Palmolive Мицеллярный уход с мицеллярной водой и экстрактом хлопка действуют словно магнит, эффективно «захватая» мелкие частички загрязнений, нежно удаляя их с поверхности кожи и не нарушая ее естественного увлажнения.",
+    "brand": "Palmolive",
+    "manufacturer": "Palmolive",
+    "category": 7
+  },
+  {
+    "id": "17",
+    "barcode": "440405549",
+    "imageProduct": "https://eco-dostavka24.ru/upload/iblock/3bc/3bc1c2a2093d9e39d9a76798f2a98b64.jpg",
+    "title": "Familia Бумажные полотенца белые двухслойные",
+    "types": "масса",
+    "size": "360 гр",
+    "price": "184",
+    "description": "Двухслойные бумажные полотенца 'Familia', выполненные из 100% целлюлозы, подарят превосходный комфорт и ощущение чистоты и свежести. ",
+    "brand": "Famillia",
+    "manufacturer": "Famillia",
+    "category": 10
+  },
+  {
+    "id": "18",
+    "barcode": "4556440405549",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/hlr-system/134/413/725/632/818/21/100001554592b0.png",
+    "title": "Средство после бритья Gillette Gillette pro Бальзам 2в1",
+    "types": "объем",
+    "size": "100 мл",
+    "price": "875",
+    "description": "Бальзам после бритья Gillette Pro Интенсивное охлаждение, 100 мл - был разработан для мгновенного оказания интенсивного охлаждающего действия на кожу после бритья, а также лучшего удерживания влаги в течение всего дня.",
+    "brand": "Gillette",
+    "manufacturer": "Gillette",
+    "category": 6
+  }
 ]
