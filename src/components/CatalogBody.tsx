@@ -24,7 +24,7 @@ const CatalogBody = () => {
       <section className="catalog__body">
         <div className="catalog__list">
           {products.map((product: Product) => (
-            <Link key={product.id} to={`/${product.id}`}>
+            <Link key={product.id} to={`/product/${product.id}`}>
               <ProductCart
                 id={product.id}
                 key={product.title}

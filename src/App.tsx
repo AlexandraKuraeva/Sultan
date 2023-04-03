@@ -19,22 +19,24 @@ interface Product {
   barcode: string;
 }
 interface ContextValue {
+
   products: Product[];
 }
 
 export const ProductContext = React.createContext<ContextValue>({
+ 
   products: [],
 });
 
 function App() {
   const [products, setProducts] = React.useState([]);
   useEffect(() => {
-    fetch('../../assets/sultan.json')
+    fetch('https://raw.githubusercontent.com/AlexandraKuraeva/Sultan/main/assets/sultan.json')
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
       });
-  }, []);
+  },[]);
 
   return (
     <ProductContext.Provider value={{ products }}>
@@ -44,7 +46,7 @@ function App() {
           <main className="main">
             <Routes>
               <Route path="/" element={<Catalog />} />
-              <Route path="/:id" element={<Product />} />
+              <Route path="/product/:id" element={<Product />} />
               <Route path="/cart" element={<Cart />} />
             </Routes>
           </main>
