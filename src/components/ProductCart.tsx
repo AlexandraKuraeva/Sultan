@@ -2,6 +2,9 @@ import React from 'react';
 
 import { Route, Routes, Link } from 'react-router-dom';
 import Product from '../page/Product';
+import basket from "../../img/catalog/basket.svg";
+import m from '../../img/catalog/m.svg';
+import v from '../../img/catalog/v.svg';
 interface ProductCartProps {
   id: string;
   title: string;
@@ -39,7 +42,7 @@ const ProductCart: React.FC<ProductCartProps> = ({
     'Гигиена полости рта',
     'Бумажная продукция',
   ];
-  let typeSize = types === 'вес' ? '../../img/catalog/m.svg' : '../../img/catalog/v.svg';
+  let typeSize = types === 'вес' ? m : v;
   return (
     //  <Routes><Route path="/product" element={<Product/>} />
     //    </Routes>
@@ -80,7 +83,7 @@ const ProductCart: React.FC<ProductCartProps> = ({
           <button className="product-card__btn">
             В КОРЗИНУ
             <span>
-              <img src="../../img/catalog/basket.svg" alt="корзина" />
+              <img src={basket} alt="корзина" />
             </span>
           </button>
         </div>

@@ -4,6 +4,9 @@ import Sort from '../components/Sort';
 import FilterLeft from '../components/FilterLeft';
 
 import CatalogBody from '../components/CatalogBody';
+
+import arrowBack from '../../img/catalog/arrow_back.svg';
+
 interface Product {
   id: string;
   title: string;
@@ -27,7 +30,7 @@ interface ContextValue {
 // export const CatalogContext = React.createContext('');
 export const CatalogContext = React.createContext<ContextValue>({
   handleCategorySelect: (category: number) => {},
-  selectedCategory:  undefined,
+  selectedCategory: undefined,
   sortType: 0,
   handleSortChange: (sortType: number) => {},
   products: [],
@@ -118,7 +121,7 @@ const Catalog = () => {
       >
         <div className="container">
           <a className="box-btn box-btn_back">
-            <img src="../../img/catalog/2.svg" alt="назад" />
+            <img src={arrowBack} alt="назад" />
             <p>Назад</p>
           </a>
 
@@ -134,7 +137,7 @@ const Catalog = () => {
 
           <div className="catalog__container">
             {!isMobile && <FilterLeft />}
-            <CatalogBody  />
+            <CatalogBody />
           </div>
         </div>
       </CatalogContext.Provider>
