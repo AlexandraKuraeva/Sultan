@@ -43,14 +43,14 @@ const Catalog = () => {
   const handleCategorySelect = (index: number) => {
     console.log(index);
     if (index === null) {
-      fetch('../../assets/sultan.json')
+      fetch('https://raw.githubusercontent.com/AlexandraKuraeva/Sultan/main/assets/sultan.json')
         .then((response) => response.json())
         .then((data) => {
           setProducts(data);
           setSelectedCategory(null);
         });
     } else {
-      fetch('../../assets/sultan.json')
+      fetch('https://raw.githubusercontent.com/AlexandraKuraeva/Sultan/main/assets/sultan.json')
         .then((response) => response.json())
         .then((data) => {
           const filteredData = data.filter((item: any) => index === item.category);
@@ -64,14 +64,14 @@ const Catalog = () => {
   const handleSortChange = (index: number) => {
     console.log(index);
     if (index === null) {
-      fetch('../../assets/sultan.json')
+      fetch('https://raw.githubusercontent.com/AlexandraKuraeva/Sultan/main/assets/sultan.json')
         .then((response) => response.json())
         .then((data) => {
           setProducts(data);
           setSortType(0);
         });
     } else {
-      fetch('../../assets/sultan.json')
+      fetch('https://raw.githubusercontent.com/AlexandraKuraeva/Sultan/main/assets/sultan.json')
         .then((response) => response.json())
         .then((data) => {
           let res =
@@ -91,7 +91,7 @@ const Catalog = () => {
 
   useEffect(() => {
     if (!clicked) {
-      fetch('../../assets/sultan.json')
+      fetch('https://raw.githubusercontent.com/AlexandraKuraeva/Sultan/main/assets/sultan.json')
         .then((response) => response.json())
         .then((data) => {
           setProducts(data);
