@@ -7,7 +7,7 @@ import CatalogBody from '../components/CatalogBody';
 interface Product {
   id: string;
   title: string;
-  category: number | null | undefined;
+  category: number;
   price: string;
   imageProduct: string;
   manufacturer: string;
@@ -134,7 +134,7 @@ const Catalog = () => {
 
           <div className="catalog__container">
             {!isMobile && <FilterLeft />}
-            <CatalogBody products={products} />
+            <CatalogBody  />
           </div>
         </div>
       </CatalogContext.Provider>

@@ -2,7 +2,20 @@ import React from 'react';
 
 import { Route, Routes, Link } from 'react-router-dom';
 import Product from '../page/Product';
-const ProductCart = ({
+interface ProductCartProps {
+  id: string;
+  title: string;
+  category: number;
+  price: string;
+  imageProduct: string;
+  manufacturer: string;
+  brand: string;
+  description: string;
+  size: string;
+  types: string;
+  barcode: string;
+}
+const ProductCart: React.FC<ProductCartProps> = ({
   title,
   imageProduct,
   price,
@@ -28,53 +41,51 @@ const ProductCart = ({
   ];
   let typeSize = types === 'вес' ? '../../img/catalog/m.svg' : '../../img/catalog/v.svg';
   return (
-   //  <Routes><Route path="/product" element={<Product/>} />
-   //    </Routes>
-        
-		  
-      <>
-        <article className="product-card">
-          <div  className="product-card__image">
-            <img src={imageProduct} alt="Изображение товара" />
-          </div>
-          <div className="product-card__volum-weight">
+    //  <Routes><Route path="/product" element={<Product/>} />
+    //    </Routes>
+
+    <>
+      <article className="product-card">
+        <div className="product-card__image">
+          <img src={imageProduct} alt="Изображение товара" />
+        </div>
+        <div className="product-card__volum-weight">
+          <span>
+            <img src={typeSize} alt="тип размера" />
+          </span>
+          {size}
+        </div>
+        <div className="product-card__title">
+          {' '}
+          <div>{title}</div>{' '}
+        </div>
+
+        <div className="product-card__info">
+          <p className="product-card__info-text">
+            Штрихкод: <span>{barcode}</span>
+          </p>
+          <p className="product-card__info-text">
+            Производитель: <span>{manufacturer}</span>
+          </p>
+          <p className="product-card__info-text">
+            Бренд: <span>{brand}</span>
+          </p>
+          <p className="product-card__info-text">
+            Тип ухода: <span>{categories[category]}</span>
+          </p>
+        </div>
+
+        <div className="product-card__footer">
+          <p className="product-card__price">{price} ₸</p>
+          <button className="product-card__btn">
+            В КОРЗИНУ
             <span>
-              <img src={typeSize} alt="тип размера" />
+              <img src="../../img/catalog/basket.svg" alt="корзина" />
             </span>
-            {size}
-          </div>
-          <div className="product-card__title">
-            {' '}
-            <div>{title}</div>{' '}
-          </div>
-
-          <div className="product-card__info">
-            <p className="product-card__info-text">
-              Штрихкод: <span>{barcode}</span>
-            </p>
-            <p className="product-card__info-text">
-              Производитель: <span>{manufacturer}</span>
-            </p>
-            <p className="product-card__info-text">
-              Бренд: <span>{brand}</span>
-            </p>
-            <p className="product-card__info-text">
-              Тип ухода: <span>{categories[category]}</span>
-            </p>
-          </div>
-
-          <div className="product-card__footer">
-            <p className="product-card__price">{price} ₸</p>
-            <button className="product-card__btn">
-              В КОРЗИНУ
-              <span>
-                <img src="../../img/catalog/basket.svg" alt="корзина" />
-              </span>
-            </button>
-          </div>
-        </article>
-      </>
-   
+          </button>
+        </div>
+      </article>
+    </>
   );
 };
 

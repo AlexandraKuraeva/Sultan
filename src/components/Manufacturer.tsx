@@ -4,9 +4,13 @@ import imgOp from '../../img/catalog/1.svg';
 import { CatalogContext } from '../page/Catalog';
 
 const Manufacturer = () => {
+	type Manufacturer = {
+    name: string;
+    count: number;
+  };
   const { products } = useContext(CatalogContext);
-  const [manufacturers, setManufacturers] = useState([]); // массив производителей
-  const [filteredManufacturers, setFilteredManufacturers] = useState();
+  const [manufacturers, setManufacturers] = useState<Manufacturer[]>([]); // массив производителей
+  const [filteredManufacturers, setFilteredManufacturers] = useState<Manufacturer[]>([]);
 
   const [query, setQuery] = useState(''); //запрос
 
@@ -21,17 +25,21 @@ const Manufacturer = () => {
       }
     });
 
-    const manufacturersArr = [];
+    
+
+    const manufacturersArr: Manufacturer[] = [];
 
     manufacturerMap.forEach((value, key) => {
       manufacturersArr.push({ name: key, count: value });
     });
 
     setManufacturers(manufacturersArr);
+    console.log(manufacturersArr);
   }, [filteredManufacturers]);
 
-  function handleInputChange(event) {
-    const query = event.target.value.trim();
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    
+    const query:string = event.target.value.trim();
     setQuery(query);
 
     if (query.length >= 3) {
@@ -41,10 +49,11 @@ const Manufacturer = () => {
       setFilteredManufacturers(manufacturers);
     }
   }
-  function filterManufacturers(query) {
+  function filterManufacturers(query:string) {
     const queryLowerCase = query.toLowerCase();
+	 
     const filteredManufacturers = manufacturers.filter((manufacturer) => {
-      const name = manufacturer.name.toLowerCase();
+      const name:string = manufacturer.name.toLowerCase();
       return name.startsWith(queryLowerCase);
     });
     return filteredManufacturers;
@@ -70,16 +79,15 @@ const Manufacturer = () => {
         </div>
       </form>
       <ul className="filter-prop__list">
-        {
-          manufacturers.map((manufacturer) => (
-            <li className="filter-prop__checkbox" key={manufacturer.name}>
-              <input id="prop-0" type="checkbox"></input>
-              <label htmlFor="prop-0">
-                {manufacturer.name}
-                <span>({manufacturer.count})</span>
-              </label>
-            </li>
-          ))}
+        {manufacturers.map((manufacturer) => (
+          <li className="filter-prop__checkbox" key={manufacturer.name}>
+            <input id="prop-0" type="checkbox"></input>
+            <label htmlFor="prop-0">
+              {manufacturer.name}
+              <span>({manufacturer.count})</span>
+            </label>
+          </li>
+        ))}
       </ul>
 
       {/* <button className="filter-prop__btn" >

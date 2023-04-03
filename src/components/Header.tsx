@@ -21,7 +21,8 @@ const Header = () => {
     };
   }, [showMenu]);
 
-  const preventScroll = (event) => {
+  const preventScroll = (event: Event): void => {
+    console.log(event);
     event.preventDefault();
   };
 

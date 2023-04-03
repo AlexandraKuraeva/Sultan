@@ -1,19 +1,32 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
-
-// import Sort from './Sort';
-// import Categories from './Categories';
+import { CatalogContext } from '../page/Catalog';
+interface Product {
+  id: string;
+  title: string;
+  category: number;
+  price: string;
+  imageProduct: string;
+  manufacturer: string;
+  brand: string;
+  description: string;
+  size: string;
+  types: string;
+  barcode: string;
+}
 
 import ProductCart from './ProductCart';
-const CatalogBody = (props: any) => {
-  console.log(props);
+const CatalogBody = () => {
+	 const { products } = useContext(CatalogContext);
+ console.log(products);
   return (
     <>
       <section className="catalog__body">
         <div className="catalog__list">
-          {props.products.map((product: any) => (
+          {products.map((product: Product) => (
             <Link key={product.id} to={`/${product.id}`}>
               <ProductCart
+                id={product.id}
                 key={product.title}
                 title={product.title}
                 price={product.price}
@@ -24,6 +37,7 @@ const CatalogBody = (props: any) => {
                 size={product.size}
                 types={product.types}
                 category={product.category}
+                description={product.description}
               />
             </Link>
           ))}
