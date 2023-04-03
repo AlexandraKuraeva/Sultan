@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logoSvg from '../../img/header/logo_b.svg';
+import point from '../../img/header/point.svg';
+import mail from '../../img/header/mail.svg';
+import callImg from '../../img/header/call_img.svg';
+import frame from '../../img/header/Frame.svg';
+import price from '../../img/header/price.svg';
+import cart from '../../img/header/cart.svg'
+import search from '../../img/header/search.svg';
+import earchB from '../../img/header/earch_b.svg';
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -38,11 +46,7 @@ const Header = () => {
               <div className="header__left">
                 <ul className="header__left contact-info">
                   <li className="contact-info__item">
-                    <img
-                      src="../../img/header/point.svg"
-                      alt="адрес"
-                      className="contact-info__location"
-                    />
+                    <img src={point} alt="адрес" className="contact-info__location" />
                     <p className="contact-info__content">
                       <b>г. Кокчетав, ул. Ж. Ташенова 129Б</b>
                       <br />
@@ -50,11 +54,7 @@ const Header = () => {
                     </p>
                   </li>
                   <li className="contact-info__item">
-                    <img
-                      src="../../img/header/mail.svg"
-                      alt="адрес"
-                      className="contact-info__location"
-                    />
+                    <img src={mail} alt="адрес" className="contact-info__location" />
                     <p className="contact-info__content">
                       <b>
                         <a href="!#">opt.sultan@mail.ru</a>
@@ -77,7 +77,7 @@ const Header = () => {
                   </li>
                   <li className="contact-info__item-call">
                     <img
-                      src="../../img/header/Frame 124.svg"
+                      src={frame}
                       alt="заказать звонок"
                       className="contact-info__location"
                     />
@@ -124,7 +124,7 @@ const Header = () => {
 
               <Link to="/cart" className="cart__link cart">
                 <span className="cart__icon">
-                  <img src="../../img/header/cart.svg" alt="корзина" />
+                  <img src={cart} alt="корзина" />
                 </span>
                 <div className="cart__count">3</div>
               </Link>
@@ -138,7 +138,7 @@ const Header = () => {
               <div className="header__center-content">
                 <div className="header__center-logo logo">
                   <a href="#">
-                    <img src="../../img/header/logo_b.svg" alt="logo" />
+                    <img src={logoSvg} alt="logo" />
                   </a>
                 </div>
                 <Link to="/" className="header__center-btn-catalog btn">
@@ -151,7 +151,7 @@ const Header = () => {
                   <div className="search-box__wrapper">
                     <input type="search" className="search-box__input " placeholder="Поиск..." />
                     <button type="button" className="search-box__btn">
-                      <img src="../../img/header/search.svg" alt="поиск" />
+                      <img src={search} alt="поиск" />
                     </button>
                   </div>
                 </form>
@@ -167,23 +167,19 @@ const Header = () => {
                       </a>
                     </p>
                   </div>
-                  <img
-                    src="../../img/header/call_img.svg"
-                    alt="контентное изображение"
-                    className="call__img"
-                  />
+                  <img src={callImg} alt="контентное изображение" className="call__img" />
                 </div>
 
                 <button className="header__center-btn-price btn">
                   Прайс-лист
                   <span>
-                    <img src="../../img/header/price.svg" alt="прайс-лист" />
+                    <img src={price} />
                   </span>
                 </button>
                 <Link to="/cart" className="header__cart-box">
                   <div className="cart__link cart">
                     <span className="cart__icon">
-                      <img src="../../img/header/cart.svg" alt="корзина" />
+                      <img src={cart} alt="корзина" />
                     </span>
                     <div className="cart__count">3</div>
                   </div>
@@ -208,7 +204,7 @@ const Header = () => {
               </Link>
               <div className="wrap__divider"></div>
               <div className="wrap__item">
-                <img src="../../img/header/earch_b.svg" alt="иконка" />
+                <img src={earchB} alt="иконка" />
                 <p>Поиск</p>
               </div>
             </div>
@@ -218,11 +214,7 @@ const Header = () => {
           <div className="header-nav__wrapper">
             <ul className="contact-info">
               <li className="contact-info__item">
-                <img
-                  src="../../img/header/point.svg"
-                  alt="адрес"
-                  className="contact-info__location"
-                />
+                <img src={point} alt="адрес" className="contact-info__location" />
                 <p className="contact-info__content">
                   <b>г. Кокчетав, ул. Ж. Ташенова 129Б</b>
                   <br />
@@ -230,11 +222,7 @@ const Header = () => {
                 </p>
               </li>
               <li className="contact-info__item">
-                <img
-                  src="../../img/header/mail.svg"
-                  alt="почтовый адрес"
-                  className="contact-info__location"
-                />
+                <img src={mail} alt="почтовый адрес" className="contact-info__location" />
                 <p className="contact-info__content">
                   <b>
                     <a href="!#">opt.sultan@mail.ru</a>
@@ -296,7 +284,7 @@ const Header = () => {
               <button className="header__center-btn-price btn">
                 Прайс-лист
                 <span>
-                  <img src="../../img/header/price.svg" alt="прайс-лист" />
+                  <img src={price} alt="прайс-лист" />
                 </span>
               </button>
             </nav>
