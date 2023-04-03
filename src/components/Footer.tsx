@@ -1,4 +1,12 @@
 import React from 'react';
+import logo from '../../img/footer/logo.svg';
+import price from '../../img/header/price.svg';
+import arrow1 from '../../img/footer/arrow1.svg';
+import whatsapp from '../../img/footer/whatsapp.svg';
+import telegram from '../../img/footer/telegram.svg';
+import Visa from '../../img/footer/Visa.svg';
+import Visa1 from '../../img/footer/Visa1.svg';
+
 
 const Footer = () => {
   return (
@@ -9,12 +17,12 @@ const Footer = () => {
             <div className="footer__description description">
               <div className="description__logo-btn ">
                 <a href="!#">
-                  <img src="../../img/footer/logo.svg" alt="logo" />
+                  <img src={logo} alt="logo" />
                 </a>
                 <button className="description__btn btn">
                   Прайс-лист
                   <span>
-                    <img src="../../img/header/price.svg" alt="Прайс-лист" />
+                    <img src={price} alt="Прайс-лист" />
                   </span>
                 </button>
               </div>
@@ -36,7 +44,7 @@ const Footer = () => {
                     placeholder="Введите ваш E-mail"
                   />
                   <button type="button" className="search-box__btn ">
-                    <img src="../../img/footer/arrow1.svg" alt="e-mail" />
+                    <img src={arrow1} alt="e-mail" />
                   </button>
                 </div>
               </form>
@@ -89,7 +97,7 @@ const Footer = () => {
                   <button className="footer-price__btn btn">
                     Прайс-лист
                     <span>
-                      <img src="../../img/header/price.svg" alt="Прайс-лист" />
+                      <img src={price} alt="Прайс-лист" />
                     </span>
                   </button>
                 </div>
@@ -97,10 +105,10 @@ const Footer = () => {
                   <p className="footer__contacts-title">Связь в мессенджерах:</p>
                   <div className="footer__icons">
                     <a className="footer__icon" href="!#">
-                      <img src="../../img/footer/whatsapp.svg" alt="мессенджер" />
+                      <img src={whatsapp} alt="мессенджер" />
                     </a>
                     <a className="footer__icon" href="!#">
-                      <img src="../../img/footer/telegram.svg" alt="мессенджер" />
+                      <img src={telegram} alt="мессенджер" />
                     </a>
                   </div>
                 </div>
@@ -127,10 +135,10 @@ const Footer = () => {
                   <div className="footer__payment-method">
                     <div className="footer__icons">
                       <a className="footer__icon" href="!#">
-                        <img src="../../img/footer/Visa.svg" alt="мессенджер" />
+                        <img src={Visa} alt="мессенджер" />
                       </a>
                       <a className="footer__icon" href="!#">
-                        <img src="../../img/footer/Visa (1).svg" alt="мессенджер" />
+                        <img src={Visa1} alt="мессенджер" />
                       </a>
                     </div>
                   </div>

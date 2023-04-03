@@ -9,6 +9,8 @@ import price from '../../img/header/price.svg';
 import cart from '../../img/header/cart.svg'
 import search from '../../img/header/search.svg';
 import earchB from '../../img/header/earch_b.svg';
+import phone from "../../img/header/phone.svg";
+import Frame2 from "../../img/header/Frame 124.svg"
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -64,11 +66,7 @@ const Header = () => {
                     </p>
                   </li>
                   <li className="contact-info__item-phone">
-                    <img
-                      src="../../img/header/phone.svg"
-                      alt="адрес"
-                      className="contact-info__location"
-                    />
+                    <img src={phone} alt="адрес" className="contact-info__location" />
                     <p className="contact-info__content">
                       <b>Отдел продаж </b>
                       <a href="!#">+7 (777) 490-00-91</a>
@@ -76,11 +74,7 @@ const Header = () => {
                     </p>
                   </li>
                   <li className="contact-info__item-call">
-                    <img
-                      src={frame}
-                      alt="заказать звонок"
-                      className="contact-info__location"
-                    />
+                    <img src={frame} alt="заказать звонок" className="contact-info__location" />
                     <p>
                       <a href="!#">
                         <u>Заказать звонок</u>
@@ -144,7 +138,7 @@ const Header = () => {
                 <Link to="/" className="header__center-btn-catalog btn">
                   Каталог
                   <span>
-                    <img src="../../img/header/Frame.svg" alt="каталог" />
+                    <img src={frame} alt="каталог" />
                   </span>
                 </Link>
                 <form className=" header__center-search search-box">
@@ -199,7 +193,7 @@ const Header = () => {
           <div className="container">
             <div className="header__buttom-inner wrap">
               <Link to="/" className="wrap__item">
-                <img src="../../img/header/catalog.svg" alt="иконка" />
+                <img src={frame} alt="иконка" />
                 <p>Каталог</p>
               </Link>
               <div className="wrap__divider"></div>
@@ -233,7 +227,7 @@ const Header = () => {
               </li>
               <li className="contact-info__item-phone">
                 <img
-                  src="../../img/header/phone.svg"
+                  src={phone}
                   alt="номер телефона"
                   className="contact-info__location"
                 />
@@ -244,11 +238,7 @@ const Header = () => {
                 </p>
               </li>
               <li className="contact-info__item-call">
-                <img
-                  src="../../img/header/Frame 124.svg"
-                  alt="заказать звонок"
-                  className="contact-info__location"
-                />
+                <img src={Frame2} alt="заказать звонок" className="contact-info__location" />
                 <p>
                   <a href="!#">
                     <u>Заказать звонок</u>

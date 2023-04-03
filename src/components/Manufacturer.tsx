@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 
 import imgOp from '../../img/catalog/1.svg';
 import { CatalogContext } from '../page/Catalog';
+import search from "../../img/header/search.svg"
 
 const Manufacturer = () => {
 	type Manufacturer = {
@@ -74,7 +75,7 @@ const Manufacturer = () => {
             onChange={(event) => handleInputChange(event)}
           />
           <button type="button" className="search-box__btn">
-            <img src="../../img/header/search.svg" alt="поиск" />
+            <img src={search} alt="поиск" />
           </button>
         </div>
       </form>
