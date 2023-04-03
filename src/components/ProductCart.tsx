@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Route, Routes, Link } from 'react-router-dom';
 import Product from '../page/Product';
-import basket from "../../img/catalog/basket.svg";
-import m from '../../img/catalog/m.svg';
-import v from '../../img/catalog/v.svg';
+import basket from "/img/catalog/basket.svg";
+import m from '/img/catalog/m.svg';
+import v from '/img/catalog/v.svg';
 interface ProductCartProps {
   id: string;
   title: string;
