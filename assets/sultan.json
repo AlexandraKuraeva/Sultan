@@ -1,16 +1,16 @@
 [
   {
-	"id": "0",
+    "id": "0",
     "barcode": "4fghfgh7548",
-    "imageProduct": "https://lenino-torg.ru/uploads/product/2100/2101/thumbs/70_j8WSRr-8i32UKBlrUzI2k2.jpeg",
-    "title": "ШfghhTIMOTEI",
+    "imageProduct": "https://cdn1.ozone.ru/s3/multimedia-y/6402283942.jpg",
+    "title": "Гель для бритья",
     "types": "объем",
-    "size": "400",
-    "price": "102",
-    "description": "Шампунь для волос TIMOTEI МЕРЦАЮЩИЙ БЛЕСК 400 мл бренда Timotei . Артикул товара в каталоге 56718. Данный товар представлен в разделе Шампуни категории Средства для ухода за волосами по цене 102 руб. Выбирая шампуни, обращайте внимание на основные характеристики, такие как объём.",
-    "brand": "Timotei",
+    "size": "75",
+    "price": "245",
+    "description": " Гель для бритья не сушит и не стягивает, в его составе нет парабенов. Он выпускается без спирта и других сильных аллергенов, которые могут спровоцировать негативную реакцию организма. ",
+    "brand": "Gillette",
     "manufacturer": "Timotei",
-    "category": 4
+    "category": 6
   },
   {
     "id": "1",
@@ -81,12 +81,25 @@
     "barcode": "4604049097548",
     "imageProduct": "https://lenino-torg.ru/uploads/product/2100/2101/thumbs/70_j8WSRr-8i32UKBlrUzI2k2.jpeg",
     "title": "Шампунь для волос TIMOTEI",
-    "types": "",
+    "types": "объем",
     "size": "400",
     "price": "102",
     "description": "Шампунь для волос TIMOTEI МЕРЦАЮЩИЙ БЛЕСК 400 мл бренда Timotei . Артикул товара в каталоге 56718. Данный товар представлен в разделе Шампуни категории Средства для ухода за волосами по цене 102 руб. Выбирая шампуни, обращайте внимание на основные характеристики, такие как объём.",
     "brand": "Timotei",
     "manufacturer": "Timotei",
     "category": 4
+  },
+	{
+    "id": "7",
+    "barcode": "4604049097548",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/hlr-system/535/752/808/915/154/8/100002568231b0.jpg",
+    "title": "Гель для душа Palmolive Натурэль",
+    "types": "объем",
+    "size": "250",
+    "price": "266",
+    "description": "Гель для душа Palmolive Натурэль Черная Орхидея и Увлажняющее Молочко 250мл дешево и с доставкой.",
+    "brand": "Palmolive",
+    "manufacturer": "Palmolive",
+    "category": 0
   }
 ]
