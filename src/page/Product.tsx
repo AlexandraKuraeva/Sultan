@@ -25,7 +25,7 @@ const Product = () => {
             <div className="product__description description">
               <div className="description__inner">
                 <p className="description__label">В наличии</p>
-                <p className="description__title">{product.title}</p>
+                {/* <p className="description__title">{product.title}</p> */}
               </div>
             </div>
           </div>

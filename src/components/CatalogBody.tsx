@@ -5,14 +5,13 @@ import { Link } from 'react-router-dom';
 // import Categories from './Categories';
 
 import ProductCart from './ProductCart';
-const CatalogBody = (props) => {
-	
-	console.log(props);
+const CatalogBody = (props: any) => {
+  console.log(props);
   return (
     <>
       <section className="catalog__body">
         <div className="catalog__list">
-          {props.products.map((product) => (
+          {props.products.map((product: any) => (
             <Link key={product.id} to={`/${product.id}`}>
               <ProductCart
                 key={product.title}

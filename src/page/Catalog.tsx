@@ -4,16 +4,39 @@ import Sort from '../components/Sort';
 import FilterLeft from '../components/FilterLeft';
 
 import CatalogBody from '../components/CatalogBody';
-
-
-export const CatalogContext = React.createContext('');
-
+interface Product {
+  id: string;
+  title: string;
+  category: number | null | undefined;
+  price: string;
+  imageProduct: string;
+  manufacturer: string;
+  brand: string;
+  description: string;
+  size: string;
+  types: string;
+  barcode: string;
+}
+interface ContextValue {
+  handleCategorySelect: (category: number) => void;
+  selectedCategory: number | null | undefined;
+  sortType: number;
+  handleSortChange: (sortType: number) => void;
+  products: Product[];
+}
+// export const CatalogContext = React.createContext('');
+export const CatalogContext = React.createContext<ContextValue>({
+  handleCategorySelect: (category: number) => {},
+  selectedCategory:  undefined,
+  sortType: 0,
+  handleSortChange: (sortType: number) => {},
+  products: [],
+});
 const Catalog = () => {
-	  
   const [clicked, setClicked] = useState(false); //проверка на выбор элементов управления
   const [products, setProducts] = useState([]); //данные
   const [sortType, setSortType] = useState(0); //сортировка
-  const [selectedCategory, setSelectedCategory] = useState<number | null>(); //выбранная категория
+  const [selectedCategory, setSelectedCategory] = useState<number | null | undefined>(); //выбранная категория
   const [isMobile, setIsMobile] = useState<boolean>(false); //адаптив
 
   // Фильтрация по категориям
@@ -30,15 +53,15 @@ const Catalog = () => {
       fetch('../../assets/sultan.json')
         .then((response) => response.json())
         .then((data) => {
-          const filteredData = data.filter((item) => index === item.category);
+          const filteredData = data.filter((item: any) => index === item.category);
           setProducts(filteredData);
           setSelectedCategory(index);
         });
     }
   };
-console.log(products);
+  console.log(products);
   //Сортировка
-  const handleSortChang = (index: number) => {
+  const handleSortChange = (index: number) => {
     console.log(index);
     if (index === null) {
       fetch('../../assets/sultan.json')
@@ -53,11 +76,11 @@ console.log(products);
         .then((data) => {
           let res =
             index === 0
-              ? data.sort((a, b) => a.title.localeCompare(b.title))
+              ? data.sort((a: any, b: any) => a.title.localeCompare(b.title))
               : index === 1
-              ? data.sort((a, b) => b.price - a.price)
+              ? data.sort((a: any, b: any) => b.price - a.price)
               : index === 2
-              ? data.sort((a, b) => a.price - b.price)
+              ? data.sort((a: any, b: any) => a.price - b.price)
               : data;
           setProducts(res);
           setSortType(index);
@@ -87,39 +110,36 @@ console.log(products);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
   return (
-    
-      <>
-        
-        <CatalogContext.Provider
-          value={{ handleCategorySelect, selectedCategory, sortType, handleSortChang, products }}
-        >
-          <div className="container">
-            <a className="box-btn box-btn_back">
-              <img src="../../img/catalog/2.svg" alt="назад" />
-              <p>Назад</p>
-            </a>
+    <>
+      <CatalogContext.Provider
+        value={{ handleCategorySelect, selectedCategory, sortType, handleSortChange, products }}
+      >
+        <div className="container">
+          <a className="box-btn box-btn_back">
+            <img src="../../img/catalog/2.svg" alt="назад" />
+            <p>Назад</p>
+          </a>
 
-            <section className="catalog__sort-title">
-              <h1 className="catalog__title title">Косметика и гигиена</h1>
-              {isMobile && <FilterLeft />}
-              {!isMobile && <Sort />}
-            </section>
+          <section className="catalog__sort-title">
+            <h1 className="catalog__title title">Косметика и гигиена</h1>
+            {isMobile && <FilterLeft />}
+            {!isMobile && <Sort />}
+          </section>
 
-            <Categories />
+          <Categories />
 
-            {isMobile && <Sort />}
+          {isMobile && <Sort />}
 
-            <div className="catalog__container">
-              {!isMobile && <FilterLeft />}
-              <CatalogBody products={products} />
-            </div>
+          <div className="catalog__container">
+            {!isMobile && <FilterLeft />}
+            <CatalogBody products={products} />
           </div>
-        </CatalogContext.Provider>
-      </>
-    
+        </div>
+      </CatalogContext.Provider>
+    </>
   );
-  
 };
 
 export default Catalog;

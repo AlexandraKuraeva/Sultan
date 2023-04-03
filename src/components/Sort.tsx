@@ -4,7 +4,7 @@ import { CatalogContext } from '../page/Catalog';
 
 const Sort = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const { handleSortChang, sortType } = useContext(CatalogContext);
+  const { handleSortChange, sortType } = useContext(CatalogContext);
 
   let list = ['по названию', 'по убыванию цены', 'по возрастанию цены'];
 
@@ -29,7 +29,7 @@ console.log(sortType);
                 <li
                   key={category}
                   className={sortType === index ? 'menu__category  active' : 'menu__category'}
-                  onClick={() => handleSortChang(index)}
+                  onClick={() => handleSortChange(index)}
                 >
                   {category}
                 </li>

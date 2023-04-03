@@ -5,8 +5,26 @@ import Catalog from './page/Catalog';
 import Cart from './page/Cart';
 import { Route, Routes } from 'react-router-dom';
 import Product from './page/Product';
+interface Product {
+  id: string;
+  title: string;
+  category: number | null | undefined;
+  price: string;
+  imageProduct: string;
+  manufacturer: string;
+  brand: string;
+  description: string;
+  size: string;
+  types: string;
+  barcode: string;
+}
+interface ContextValue {
+  products: Product[];
+}
 
-export const ProductContext = React.createContext('');
+export const ProductContext = React.createContext<ContextValue>({
+  products: [],
+});
 
 function App() {
   const [products, setProducts] = React.useState([]);
@@ -16,7 +34,7 @@ function App() {
       .then((data) => {
         setProducts(data);
       });
-  },[]);
+  }, []);
 
   return (
     <ProductContext.Provider value={{ products }}>
