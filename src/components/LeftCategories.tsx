@@ -20,7 +20,7 @@ const LeftCategories = () => {
       <ul className="filter-prop__categories">
         {categories.map((category, index) => (
           <li
-            key={category}
+            key={index}
             className={
               selectedCategory === index
                 ? 'filter-prop__category menu__category active'

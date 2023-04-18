@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logoSvg from '../../img/header/logo_b.svg';
 import point from '../../img/header/point.svg';
@@ -11,8 +11,13 @@ import search from '../../img/header/search.svg';
 import earchB from '../../img/header/earch_b.svg';
 import phone from "../../img/header/phone.svg";
 import Frame2 from "../../img/header/Frame 124.svg"
+import { ProductContext } from '../App';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+	// const { cartItems } = useContext(ProductContext);
+	const cartItems = useSelector((state:CartState) => state.cartSlice.items);
+	console.log(cartItems.length);
   const [showMenu, setShowMenu] = useState<boolean>(false);
   function handleBurgerClick() {
     setShowMenu(!showMenu);
@@ -120,7 +125,7 @@ const Header = () => {
                 <span className="cart__icon">
                   <img src={cart} alt="корзина" />
                 </span>
-                <div className="cart__count">3</div>
+                <div className="cart__count">{cartItems.length}</div>
               </Link>
             </div>
           </div>
@@ -175,7 +180,7 @@ const Header = () => {
                     <span className="cart__icon">
                       <img src={cart} alt="корзина" />
                     </span>
-                    <div className="cart__count">3</div>
+                    <div className="cart__count">{cartItems.length}</div>
                   </div>
                   <div className="cart__wrap">
                     <p className="cart__title">Корзина</p>
@@ -226,11 +231,7 @@ const Header = () => {
                 </p>
               </li>
               <li className="contact-info__item-phone">
-                <img
-                  src={phone}
-                  alt="номер телефона"
-                  className="contact-info__location"
-                />
+                <img src={phone} alt="номер телефона" className="contact-info__location" />
                 <p className="contact-info__content">
                   <b>Отдел продаж </b> <br />
                   <a href="!#">+7 (777) 490-00-91</a> <br />

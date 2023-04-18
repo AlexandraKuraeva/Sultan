@@ -1,34 +1,52 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { ProductInterface, ProductContext } from '../App';
 import { Route, Routes, Link } from 'react-router-dom';
 import Product from '../page/Product';
-import basket from "/img/catalog/basket.svg";
+import basket from '/img/catalog/basket.svg';
 import m from '/img/catalog/m.svg';
 import v from '/img/catalog/v.svg';
-interface ProductCartProps {
-  id: string;
-  title: string;
-  category: number;
-  price: string;
-  imageProduct: string;
-  manufacturer: string;
-  brand: string;
-  description: string;
-  size: string;
-  types: string;
-  barcode: string;
-}
-const ProductCart: React.FC<ProductCartProps> = ({
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem } from '../redax/CartSlice';
+// import { Product } from '../App';
+// interface ProductCartProps {
+//   id: string;
+//   title: string;
+//   category: number;
+//   price: string;
+//   imageProduct: string;
+//   manufacturer: string;
+//   brand: string;
+//   description: string;
+//   size: string;
+//   types: string;
+//   barcode: string;
+// }
+const ProductCart: React.FC<ProductInterface> = ({
+  id,
   title,
   imageProduct,
   price,
   brand,
+  description,
   manufacturer,
   barcode,
   size,
   types,
   category,
 }) => {
+  const dispatch = useDispatch();
+  const onClickAdd = () => {
+    const item = {
+      id,
+      title,
+      imageProduct,
+      price,
+    };
+    console.log(item);
+    dispatch(addItem(item));
+  };
+//   const { addToCart, product } = useContext(ProductContext);
+
   let categories = [
     'Уход за телом',
     'Уход за руками',
@@ -44,48 +62,49 @@ const ProductCart: React.FC<ProductCartProps> = ({
   ];
   let typeSize = types === 'вес' ? m : v;
   return (
-    //  <Routes><Route path="/product" element={<Product/>} />
-    //    </Routes>
-
     <>
       <article className="product-card">
-        <div className="product-card__image">
-          <img src={imageProduct} alt="Изображение товара" />
-        </div>
-        <div className="product-card__volum-weight">
-          <span>
-            <img src={typeSize} alt="тип размера" />
-          </span>
-          {size}
-        </div>
-        <div className="product-card__title">
-          {' '}
-          <div>{title}</div>{' '}
-        </div>
-
-        <div className="product-card__info">
-          <p className="product-card__info-text">
-            Штрихкод: <span>{barcode}</span>
-          </p>
-          <p className="product-card__info-text">
-            Производитель: <span>{manufacturer}</span>
-          </p>
-          <p className="product-card__info-text">
-            Бренд: <span>{brand}</span>
-          </p>
-          <p className="product-card__info-text">
-            Тип ухода: <span>{categories[category]}</span>
-          </p>
-        </div>
-
-        <div className="product-card__footer">
-          <p className="product-card__price">{price} ₸</p>
-          <button className="product-card__btn">
-            В КОРЗИНУ
+        <div className="product-card__wrapper">
+          <Link key={id} to={`/product/${id}`}>
+            <div className="product-card__image">
+              <img src={imageProduct} alt="Изображение товара" />
+            </div>
+          </Link>
+          <div className="product-card__volum-weight">
             <span>
-              <img src={basket} alt="корзина" />
+              <img src={typeSize} alt="тип размера" />
             </span>
-          </button>
+            {size}
+          </div>
+          <Link key={title} to={`/product/${id}`}>
+            <div className="product-card__title">
+              {' '}
+              <div>{title}</div>{' '}
+            </div>
+          </Link>
+          <div className="product-card__info">
+            <p className="product-card__info-text">
+              Штрихкод: <span>{barcode}</span>
+            </p>
+            <p className="product-card__info-text">
+              Производитель: <span>{manufacturer}</span>
+            </p>
+            <p className="product-card__info-text">
+              Бренд: <span>{brand}</span>
+            </p>
+            <p className="product-card__info-text">
+              Тип ухода: <span>{categories[category]}</span>
+            </p>
+          </div>
+          <div className="product-card__footer">
+            <p className="product-card__price">{price} ₸</p>
+            <button onClick={onClickAdd} className="product-card__btn">
+              В КОРЗИНУ
+              <span>
+                <img src={basket} alt="корзина" />
+              </span>
+            </button>
+          </div>
         </div>
       </article>
     </>

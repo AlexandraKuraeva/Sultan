@@ -18,13 +18,13 @@ const Manufacturer = () => {
   useEffect(() => {
     const manufacturerMap = new Map();
 
-    products.forEach((product) => {
-      if (manufacturerMap.has(product.manufacturer)) {
-        manufacturerMap.set(product.manufacturer, manufacturerMap.get(product.manufacturer) + 1);
-      } else {
-        manufacturerMap.set(product.manufacturer, 1);
-      }
-    });
+   //  products.forEach((product) => {
+   //    if (manufacturerMap.has(product.manufacturer)) {
+   //      manufacturerMap.set(product.manufacturer, manufacturerMap.get(product.manufacturer) + 1);
+   //    } else {
+   //      manufacturerMap.set(product.manufacturer, 1);
+   //    }
+   //  });
 
     
 

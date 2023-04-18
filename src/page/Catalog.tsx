@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
 import FilterLeft from '../components/FilterLeft';
-
+import { useSelector, useDispatch } from 'react-redux';
 import CatalogBody from '../components/CatalogBody';
-
+import { setProducts } from '../redax/CounterSlice';
 import arrowBack from '../../img/catalog/arrow_back.svg';
 
 interface Product {
@@ -36,8 +36,11 @@ export const CatalogContext = React.createContext<ContextValue>({
   products: [],
 });
 const Catalog = () => {
+  const products = useSelector((state: RootState) => state.counterSlice.products);
+
+  const dispatch = useDispatch();
   const [clicked, setClicked] = useState(false); //проверка на выбор элементов управления
-  const [products, setProducts] = useState([]); //данные
+  //   const [products, setProducts] = useState([]); //данные
   const [sortType, setSortType] = useState(0); //сортировка
   const [selectedCategory, setSelectedCategory] = useState<number | null | undefined>(); //выбранная категория
   const [isMobile, setIsMobile] = useState<boolean>(false); //адаптив
@@ -117,7 +120,9 @@ const Catalog = () => {
   return (
     <>
       <CatalogContext.Provider
-        value={{ handleCategorySelect, selectedCategory, sortType, handleSortChange, products }}
+        value={{ handleCategorySelect, selectedCategory, sortType, handleSortChange, 
+			// products 
+		}}
       >
         <div className="container">
           <a className="box-btn box-btn_back">

@@ -16,18 +16,25 @@
 
 @media only screen and (max-width: 1190px) {
 	.catalog {
-		// .catalog__body
-
-		&__body {
-		}
-
-		// .catalog__list
-
 		&__list {
+			
+			grid-template: auto/1fr 1fr;
+			grid-gap: 2.5rem 1.25rem;
+			
+		}
+	}
+}
+
+@media only screen and (max-width: 580px){
+	.catalog {
+		
+		&__list {
+			
 			display: flex;
+			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			flex-wrap: wrap;
+			
 		}
 	}
 }

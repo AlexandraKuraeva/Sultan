@@ -1,0 +1,10 @@
+.cart-product {
+	&__item {
+		display: flex;
+		& img{
+			max-width: 190px;
+			max-height: 280px;
+			
+		}
+	}
+}
