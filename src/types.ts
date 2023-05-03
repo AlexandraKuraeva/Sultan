@@ -10,7 +10,7 @@ export interface ProductInterface {
   size: string;
   types: string;
   barcode: string;
-  quality: number;
+  quantity: number;
 }
 
 

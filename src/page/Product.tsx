@@ -35,7 +35,7 @@ const Product = () => {
         size: product.size,
         types: product.types,
         barcode: product.barcode,
-        quality: product.quality,
+        quantity: product.quantity,
       };
       console.log(item);
       dispatch(addItem(item));

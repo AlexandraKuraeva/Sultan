@@ -15,7 +15,7 @@ const Cart = () => {
           <CartItemProduct
             id={cartItem.id}
             title={cartItem.title}
-            quality={cartItem.quality}
+            quantity={cartItem.quantity}
             price={cartItem.price}
             imageProduct={cartItem.imageProduct}
             brand={cartItem.brand}

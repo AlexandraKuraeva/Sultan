@@ -20,7 +20,7 @@ const ProductCart: React.FC<ProductInterface> = ({
   size,
   types,
   category,
-  quality,
+  quantity,
 }) => {
   const dispatch = useDispatch();
   const onClickAdd = () => {
@@ -36,7 +36,7 @@ const ProductCart: React.FC<ProductInterface> = ({
       size,
       types,
       category,
-      quality,
+      quantity,
     };
     console.log(item);
     dispatch(addItem(item));

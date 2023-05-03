@@ -15,10 +15,10 @@ export const counterSlice = createSlice({
 
       const productIndex = state.products.findIndex((product) => product.id === id);
       if (productIndex !== -1) {
-        state.products[productIndex].quality += 1;
+        state.products[productIndex].quantity += 1;
       } else {
         console.log('добавился в корзину в первый раз');
-        state.products.push({ ...action.payload, quality: 1 });
+        state.products.push({ ...action.payload, quantity: 1 });
       }
     },
     decrement: (state, action) => {
@@ -26,8 +26,8 @@ export const counterSlice = createSlice({
 
       const productIndex = state.products.findIndex((product) => product.id === id);
       if (productIndex !== -1) {
-        if (action.payload.quality > 1) {
-          state.products[productIndex].quality -= 1;
+        if (action.payload.quantity > 1) {
+          state.products[productIndex].quantity -= 1;
         } else {
           console.log('остался 1 товар, не могу уменьшить');
         }

@@ -27,7 +27,7 @@ const CatalogBody = () => {
               types={product.types}
               category={product.category}
               description={product.description}
-              quality={product.quality}
+              quantity={product.quantity}
             />
           ))}
         </div>

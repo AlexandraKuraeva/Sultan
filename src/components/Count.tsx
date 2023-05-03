@@ -43,7 +43,7 @@ const Count = ({ productId, product }: Props) => {
       }
     }
   };
-  const counterCart = items.find(({ id }) => id === productId)?.quality;
+  const counterCart = items.find(({ id }) => id === productId)?.quantity;
 
   return (
     <>
@@ -56,7 +56,7 @@ const Count = ({ productId, product }: Props) => {
       >
         -
       </button>
-      <span className="count__input">{counterCart ||( product ? product.quality : 1)}</span>
+      <span className="count__input">{counterCart ||( product ? product.quantity : 1)}</span>
 
       <button
         onClick={setCounterIncrement}

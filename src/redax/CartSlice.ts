@@ -17,7 +17,7 @@ export const cartSlice = createSlice({
       console.log(findItem);
 
       if (findItem > -1) {
-        state.items[findItem].quality += 1;
+        state.items[findItem].quantity += 1;
       } else {
         console.log('добавился в корзину в первый раз');
         state.items.push(action.payload);
@@ -27,15 +27,15 @@ export const cartSlice = createSlice({
       const { id } = action.payload;
       const productIndex = state.items.findIndex((product) => product.id === id);
       if (productIndex !== -1) {
-        state.items[productIndex].quality += 1;
+        state.items[productIndex].quantity += 1;
       }
     },
     decrementQuantityCart: (state, action) => {
       const { id } = action.payload;
       const productIndex = state.items.findIndex((product) => product.id === id);
       if (productIndex !== -1) {
-        if (state.items[productIndex].quality > 1) {
-          state.items[productIndex].quality -= 1;
+        if (state.items[productIndex].quantity > 1) {
+          state.items[productIndex].quantity -= 1;
         } else {
           console.log('остался 1 товар, не могу уменьшить');
         }
@@ -45,10 +45,10 @@ export const cartSlice = createSlice({
     getCartTotal: (state: CartData) => {
       let { totalQuantity, totalPrice } = state.items.reduce(
         (cartTotal, cartItem) => {
-          const { price, quality } = cartItem;
-          const itemTotal = +price * quality;
+          const { price, quantity } = cartItem;
+          const itemTotal = +price * quantity;
           cartTotal.totalPrice += itemTotal;
-          cartTotal.totalQuantity += quality;
+          cartTotal.totalQuantity += quantity;
           return cartTotal;
         },
         {
