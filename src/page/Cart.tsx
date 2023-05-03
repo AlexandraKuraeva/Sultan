@@ -1,25 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { ProductContext } from '../App';
+import React from 'react';
+
 import CartItemProduct from '../components/CartItemProduct';
-import { ProductInterface } from '../App';
+import { ProductInterface, CartData } from '../types';
 import { useSelector } from 'react-redux';
 
-
 const Cart = () => {
-//   const { cartItems, removeFromCart, } = useContext(ProductContext);
-const cartItems = useSelector((state: cartState) => state.cartSlice.items);
- console.log(cartItems);
+  const cartItems = useSelector((state: { cartSlice: CartData }) => state.cartSlice.items);
 
- 
   return (
     <div>
       <h1>Корзина</h1>
       {cartItems.map((cartItem: ProductInterface) => (
-        <ul>
+        <div key={cartItem.id}>
           <CartItemProduct
             id={cartItem.id}
-            key={cartItem.id}
             title={cartItem.title}
+            quality={cartItem.quality}
             price={cartItem.price}
             imageProduct={cartItem.imageProduct}
             brand={cartItem.brand}
@@ -29,13 +25,13 @@ const cartItems = useSelector((state: cartState) => state.cartSlice.items);
             types={cartItem.types}
             category={cartItem.category}
             description={cartItem.description}
-            // removeFromCart={removeFromCart} // передаем как свойство
-            cartItems={cartItems.count}
           />
-        </ul>
+        </div>
       ))}
     </div>
   );
 };
 
 export default Cart;
+
+

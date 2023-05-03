@@ -2,9 +2,7 @@ import React, { useContext } from 'react';
 import { CatalogContext } from '../page/Catalog';
 
 const Categories = () => {
-	 const { handleCategorySelect, selectedCategory } = useContext(CatalogContext);
-
- 
+  const { handleCategorySelect, selectedCategory } = useContext(CatalogContext);
 
   let categories = [
     'Уход за телом',
@@ -44,4 +42,3 @@ const Categories = () => {
 
 export default Categories;
 
-// className={props.selectedMenu === 'home' ? 'active' : ''} onClick={() => props.handleMenuSelect('home')}

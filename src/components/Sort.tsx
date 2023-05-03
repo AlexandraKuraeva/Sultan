@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import products from '../../assets/sultan.json';
+
 import { CatalogContext } from '../page/Catalog';
 
 const Sort = () => {
@@ -9,12 +9,11 @@ const Sort = () => {
   let list = ['по названию', 'по убыванию цены', 'по возрастанию цены'];
 
   let sortName = list[sortType];
-  
 
   const handleToggle = () => {
     setOpen(!open);
   };
-console.log(sortType);
+  console.log(sortType);
   return (
     <>
       <div className="catalog-sort" onClick={() => handleToggle()}>

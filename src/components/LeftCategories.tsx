@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CatalogContext } from '../page/Catalog';
 const LeftCategories = () => {
-	const { handleCategorySelect, selectedCategory } = useContext(CatalogContext);
+  const { handleCategorySelect, selectedCategory } = useContext(CatalogContext);
   let categories = [
     'Уход за телом',
     'Уход за руками',

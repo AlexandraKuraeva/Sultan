@@ -1,26 +1,13 @@
 import React, { useContext } from 'react';
-import { ProductInterface, ProductContext } from '../App';
-import { Route, Routes, Link } from 'react-router-dom';
-import Product from '../page/Product';
+import { ProductInterface } from '../types';
+import { Link } from 'react-router-dom';
+
 import basket from '/img/catalog/basket.svg';
 import m from '/img/catalog/m.svg';
 import v from '/img/catalog/v.svg';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addItem } from '../redax/CartSlice';
-// import { Product } from '../App';
-// interface ProductCartProps {
-//   id: string;
-//   title: string;
-//   category: number;
-//   price: string;
-//   imageProduct: string;
-//   manufacturer: string;
-//   brand: string;
-//   description: string;
-//   size: string;
-//   types: string;
-//   barcode: string;
-// }
+
 const ProductCart: React.FC<ProductInterface> = ({
   id,
   title,
@@ -33,6 +20,7 @@ const ProductCart: React.FC<ProductInterface> = ({
   size,
   types,
   category,
+  quality,
 }) => {
   const dispatch = useDispatch();
   const onClickAdd = () => {
@@ -41,11 +29,18 @@ const ProductCart: React.FC<ProductInterface> = ({
       title,
       imageProduct,
       price,
+      brand,
+      description,
+      manufacturer,
+      barcode,
+      size,
+      types,
+      category,
+      quality,
     };
     console.log(item);
     dispatch(addItem(item));
   };
-//   const { addToCart, product } = useContext(ProductContext);
 
   let categories = [
     'Уход за телом',
@@ -113,157 +108,3 @@ const ProductCart: React.FC<ProductInterface> = ({
 
 export default ProductCart;
 
-//   {
-//     "barcode": "4604049097548",
-//     "imageProduct": "https://lenino-torg.ru/uploads/product/2100/2101/thumbs/70_j8WSRr-8i32UKBlrUzI2k2.jpeg",
-//     "title": "Шампунь для волос TIMOTEI МЕРЦАЮЩИЙ БЛЕСК",
-//     "types": "",
-//     "size": "400",
-//     "price": "102",
-//     "description": "Шампунь для волос TIMOTEI МЕРЦАЮЩИЙ БЛЕСК 400 мл бренда Timotei . Артикул товара в каталоге 56718. Данный товар представлен в разделе Шампуни категории Средства для ухода за волосами по цене 102 руб. Выбирая шампуни, обращайте внимание на основные характеристики, такие как объём.",
-//     "brand": "Timotei",
-//     "manufacturer": "Timotei"
-//   },
-//    {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   },
-//     {
-//     "barcode": "4604049097548",
-//     "imageProduct": "",
-//     "title": "",
-//     "types": "",
-//     "size": "",
-//     "price": ,
-//     "description": "",
-//     "brand": "",
-//     "manufacturer": ""
-//   }

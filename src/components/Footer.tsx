@@ -7,7 +7,6 @@ import telegram from '../../img/footer/telegram.svg';
 import Visa from '../../img/footer/Visa.svg';
 import Visa1 from '../../img/footer/Visa1.svg';
 
-
 const Footer = () => {
   return (
     <div>

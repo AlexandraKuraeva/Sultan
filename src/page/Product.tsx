@@ -1,60 +1,52 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams, Route } from 'react-router-dom';
-import { ProductContext } from '../App';
+import { useSelector, useDispatch } from 'react-redux';
+
 import m from '/img/catalog/m.svg';
 import v from '/img/catalog/v.svg';
 import basket from '/img/catalog/basket.svg';
 import dow from '/img/catalog/dow.svg';
 import share from '/img/catalog/share.svg';
-import ProductCart from '../components/ProductCart';
+
 import Count from '../components/Count';
-import { useSelector, useDispatch } from 'react-redux';
+
 import { setProduct } from '../redax/CounterSlice';
 import { addItem } from '../redax/CartSlice';
+import { ProductInterface, CounterState } from '../types';
 
 const Product = () => {
-  const { count, products, product, } = useSelector((state: RootState) => state.counterSlice);
-  console.log(product);
+  const { products, product } = useSelector(
+    (state: { counterSlice: CounterState }) => state.counterSlice,
+  );
+
   const dispatch = useDispatch();
 
-  // //   const { products, addToCart, product, setProduct, count, handleIncreaseCount, cartItems } =
-  // //     useContext(ProductContext);
-
   const onClickAdd = () => {
-    const item = {
-      id: product.id,
-      title: product.title,
-      imageProduct: product.imageProduct,
-      price: product.price,
-      value: count,
-    };
-    console.log(item);
-    dispatch(addItem(item));
+    if (product) {
+      const item = {
+        id: product.id,
+        title: product.title,
+        category: product.category,
+        price: product.price,
+        imageProduct: product.imageProduct,
+        manufacturer: product.manufacturer,
+        brand: product.brand,
+        description: product.description,
+        size: product.size,
+        types: product.types,
+        barcode: product.barcode,
+        quality: product.quality,
+      };
+      console.log(item);
+      dispatch(addItem(item));
+    }
   };
-
-  interface Product {
-    id: string;
-    title: string;
-    category: number | null | undefined;
-    price: string;
-    imageProduct: string;
-    manufacturer: string;
-    brand: string;
-    description: string;
-    size: string;
-    types: string;
-    barcode: string;
-  }
-
-  // //   interface ProductContext {
-  // //     products: Product[];
-  // //   }
 
   let typeSize = product && product.types === 'вес' ? m : v;
   const { id } = useParams();
 
   useEffect(() => {
-    const selectedProduct = products.find((product: Product) => product.id === id);
+    const selectedProduct = products.find((product: ProductInterface) => product.id === id);
     dispatch(setProduct(selectedProduct));
   }, [id, products]);
 
@@ -82,8 +74,7 @@ const Product = () => {
                 <div className="description__product-price">
                   <div className="description__price">{product.price} ₸</div>
                   <div className="description__count count">
-                    <Count product={count} />
-						
+                    <Count product={product} productId={product.id} />
                   </div>
                   <button
                     onClick={onClickAdd}

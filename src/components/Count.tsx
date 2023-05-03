@@ -1,33 +1,49 @@
 import React, { useEffect, useState } from 'react';
-import { ProductInterface } from '../App';
-import { useSelector, useDispatch } from 'react-redux';
-import { decrement, increment, setProducts } from '../redax/CounterSlice';
-import { addItem } from '../redax/CartSlice';
 
-const Count = () => {
-  const {  products, product } = useSelector((state: RootState) => state.counterSlice);
-  //   const counter = useSelector((state: RootState) => state.counterSlice.value);
-// const {c} = useSelector((state: cartState) => state.cartSlice);
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment, setProducts, setProduct } from '../redax/CounterSlice';
+import { incrementQuantityCart, decrementQuantityCart } from '../redax/CartSlice';
+import { CartData, ProductInterface, CounterState } from '../types';
+interface Props {
+  productId: string;
+  product: ProductInterface | null;
+}
+const Count = ({ productId, product }: Props) => {
+  const products = useSelector(
+    (state: { counterSlice: CounterState }) => state.counterSlice.products,
+  );
+  const items = useSelector((state: { cartSlice: CartData }) => state.cartSlice.items);
   const dispatch = useDispatch();
+  const addedToCart = items.find((product) => product.id === productId);
+  console.log(addedToCart);
+  useEffect(() => {
+    dispatch(setProduct(product)); // обновляем значение product  в сторе
+  }, [dispatch, product]);
 
   const setCounterIncrement = () => {
-    const item = {
-      id: product.id,
-      title: product.title,
-      imageProduct: product.imageProduct,
-      price: product.price,
-      count: product.count,
-    };
+    // ищем товар с нужным id
+    const targetProduct = products.find(({ id }) => id === productId);
+    if (targetProduct) {
+      console.log(targetProduct);
+      if (!addedToCart) dispatch(increment(targetProduct));
+      else {
+        dispatch(incrementQuantityCart(targetProduct));
+      }
+    }
+  };
 
-    dispatch(addItem(item));
-    dispatch(setProducts(products));
-  };
   const setCounterDecrement = () => {
-    dispatch(decrement(product));
+    const targetProduct = products.find(({ id }) => id === productId);
+    console.log(targetProduct);
+    if (targetProduct) {
+      console.log(targetProduct);
+      if (!addedToCart) dispatch(decrement(targetProduct));
+      else {
+        dispatch(decrementQuantityCart(targetProduct));
+      }
+    }
   };
-  //   const count = useSelector((state) => {
-  //     state;
-  //   });
+  const counterCart = items.find(({ id }) => id === productId)?.quality;
 
   return (
     <>
@@ -40,7 +56,8 @@ const Count = () => {
       >
         -
       </button>
-      <span className="count__input">{}</span>
+      <span className="count__input">{counterCart || product ? product?.quality : 1}</span>
+
       <button
         onClick={setCounterIncrement}
         className="count__plus js-count-plus"

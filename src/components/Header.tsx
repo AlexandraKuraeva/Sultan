@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logoSvg from '../../img/header/logo_b.svg';
 import point from '../../img/header/point.svg';
@@ -6,19 +6,26 @@ import mail from '../../img/header/mail.svg';
 import callImg from '../../img/header/call_img.svg';
 import frame from '../../img/header/Frame.svg';
 import price from '../../img/header/price.svg';
-import cart from '../../img/header/cart.svg'
+import cart from '../../img/header/cart.svg';
 import search from '../../img/header/search.svg';
 import earchB from '../../img/header/earch_b.svg';
-import phone from "../../img/header/phone.svg";
-import Frame2 from "../../img/header/Frame 124.svg"
-import { ProductContext } from '../App';
-import { useSelector } from 'react-redux';
+import phone from '../../img/header/phone.svg';
+import Frame2 from '../../img/header/Frame 124.svg';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { getCartTotal } from '../redax/CartSlice';
+import { CartData } from '../types';
 
 const Header = () => {
-	// const { cartItems } = useContext(ProductContext);
-	const cartItems = useSelector((state:CartState) => state.cartSlice.items);
-	console.log(cartItems.length);
+  const { items, totalQuantity, totalPrice } = useSelector(
+    (state: { cartSlice: CartData }) => state.cartSlice,
+  );
+  const dispatch = useDispatch();
+
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [items]);
   function handleBurgerClick() {
     setShowMenu(!showMenu);
   }
@@ -125,7 +132,7 @@ const Header = () => {
                 <span className="cart__icon">
                   <img src={cart} alt="корзина" />
                 </span>
-                <div className="cart__count">{cartItems.length}</div>
+                <div className="cart__count">{totalQuantity}</div>
               </Link>
             </div>
           </div>
@@ -180,12 +187,12 @@ const Header = () => {
                     <span className="cart__icon">
                       <img src={cart} alt="корзина" />
                     </span>
-                    <div className="cart__count">{cartItems.length}</div>
+                    <div className="cart__count">{totalQuantity}</div>
                   </div>
                   <div className="cart__wrap">
                     <p className="cart__title">Корзина</p>
                     <p className="cart__sum">
-                      <b>12 478 ₸ </b>
+                      <b>{totalPrice} ₽</b>
                     </p>
                   </div>
                 </Link>

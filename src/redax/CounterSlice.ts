@@ -1,14 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
-
-export interface CounterState {
-  count: number;
-  products: [];
-  product: null;
-}
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { CounterState } from '../types';
 
 const initialState: CounterState = {
-  count: 1,
   products: [],
   product: null,
 };
@@ -18,44 +11,32 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state, action) => {
-      console.log(action.payload);
+      const { id } = action.payload;
 
-      let found = false; // переменная-флаг, будет использована для проверки, нашли ли мы нужный товар в списке
-
-      // ищем товар в списке товаров
-      const products = state.products.map((product) => {
-        if (product.id === action.payload.id) {
-          found = true; // помечаем флаг
-          return {
-            ...product,
-            count: product.count ? product.count + 1 : 1, // если count = 0 или не определен, выставляем его в 1
-          };
-        }
-        return product;
-      });
-
-      // если товар не найден, добавляем его в список
-      if (!found) {
-        products.push({
-          ...action.payload,
-          count: 1,
-        });
+      const productIndex = state.products.findIndex((product) => product.id === id);
+      if (productIndex !== -1) {
+        state.products[productIndex].quality += 1;
+      } else {
+        console.log('добавился в корзину в первый раз');
+        state.products.push({ ...action.payload, quality: 1 });
       }
-
-      state.products = products; // обновляем значение списка товаров в хранилище
-
-      // отправляем действие обновления списка товаров
-     
     },
-    decrement: (state) => {
-      // if (state.value > 1) state.value -= 1;
+    decrement: (state, action) => {
+      const { id } = action.payload;
+
+      const productIndex = state.products.findIndex((product) => product.id === id);
+      if (productIndex !== -1) {
+        if (action.payload.quality > 1) {
+          state.products[productIndex].quality -= 1;
+        } else {
+          console.log('остался 1 товар, не могу уменьшить');
+        }
+      }
     },
     setProduct(state, action) {
-      console.log(action.payload);
       state.product = action.payload;
     },
     setProducts(state, action) {
-      console.log(action.payload);
       state.products = action.payload;
     },
   },

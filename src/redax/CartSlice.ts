@@ -1,59 +1,82 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { CartData, ProductInterface } from '../types';
 
-export interface cartState {
-  items: [];
-}
-
-const initialState: cartState = {
+const initialState: CartData = {
   items: [],
+  totalQuantity: 0,
+  totalPrice: 0,
 };
 
 export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    //  addItem: (state, action) => {
-    //    state.items.push(action.payload);
-    // 	console.log(action.payload);
-    //  },
-    addItem: (state, action) => {
-      const findItem = state.items.find((obj) => obj.id === action.payload.id);
-console.log(action.payload.id)
-      if (findItem) {
-        findItem.count++;
+    addItem: (state: CartData, action: PayloadAction<ProductInterface>) => {
+      const findItem = state.items.findIndex((obj) => obj.id === action.payload.id);
+      console.log(findItem);
+
+      if (findItem > -1) {
+        state.items[findItem].quality += 1;
       } else {
-        state.items.push({
-          ...action.payload,
-          count: 1,
-        });
+        console.log('добавился в корзину в первый раз');
+        state.items.push(action.payload);
+      }
+    },
+    incrementQuantityCart: (state, action) => {
+      const { id } = action.payload;
+      const productIndex = state.items.findIndex((product) => product.id === id);
+      if (productIndex !== -1) {
+        state.items[productIndex].quality += 1;
+      }
+    },
+    decrementQuantityCart: (state, action) => {
+      const { id } = action.payload;
+      const productIndex = state.items.findIndex((product) => product.id === id);
+      if (productIndex !== -1) {
+        if (state.items[productIndex].quality > 1) {
+          state.items[productIndex].quality -= 1;
+        } else {
+          console.log('остался 1 товар, не могу уменьшить');
+        }
       }
     },
 
-    removeCart: (state, action) => {  
-      state.items = [];
+    getCartTotal: (state: CartData) => {
+      let { totalQuantity, totalPrice } = state.items.reduce(
+        (cartTotal, cartItem) => {
+          const { price, quality } = cartItem;
+          const itemTotal = +price * quality;
+          cartTotal.totalPrice += itemTotal;
+          cartTotal.totalQuantity += quality;
+          return cartTotal;
+        },
+        {
+          totalPrice: 0,
+          totalQuantity: 0,
+        },
+      );
+      state.totalPrice = parseInt(totalPrice.toFixed(2));
+      state.totalQuantity = totalQuantity;
+    },
+    removeProduct: (state, action) => {
+      console.log('удалить из корзины');
+      const { id } = action.payload;
+      const productIndex = state.items.findIndex((item) => item.id === id);
+      if (productIndex !== -1) {
+        state.items.splice(productIndex, 1);
+      }
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addItem, removeCart } = cartSlice.actions;
+export const {
+  addItem,
+  removeProduct,
+  incrementQuantityCart,
+  decrementQuantityCart,
+  getCartTotal,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;
-
-// Функция для добавления товара в корзину
-//   const addToCart = (item: ProductInterface) => {
-//     // Проверяем, есть ли уже такой товар в корзине
-//     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
-
-//     if (isItemInCart) {
-//       console.log('Этот товар уже в корзине');
-//       return; // Если товар уже в корзине, не добавляем его, а прекращаем выполнение функции
-//     }
-
-//     // Создаем новый массив на основе текущего состояния корзины и добавляем новый товар к его концу
-//     const newCartItems = [...cartItems, item];
-
-//     // Обновляем состояние корзины
-//     setCartItems(newCartItems);
-//   };

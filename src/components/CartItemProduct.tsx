@@ -1,21 +1,18 @@
-import React, { useContext } from 'react';
-import { ProductInterface, ProductContext } from '../App';
+import { ProductInterface, CounterState } from '../types';
 
 import m from '/img/catalog/m.svg';
 import v from '/img/catalog/v.svg';
 import del from '/img/catalog/del.svg';
 import Count from './Count';
 import { useDispatch, useSelector } from 'react-redux';
+import { removeProduct } from '../redax/CartSlice';
 
-const CartItemProduct = (props: ProductInterface & { removeFromCart: (id: string) => void }) => {
-  //   const { count, product, setCartItems } = useContext(ProductContext);
-
-  // const cartItems = useSelector((state: cartState) => state.cartSlice.items.find((obj) => obj.id === props.id));
-  // console.log(cartItems);
-  const dispatch = useDispatch;
-  //   const removeCart = () => {
-
-  //   };
+const CartItemProduct = (props: ProductInterface) => {
+  const { product } = useSelector((state: { counterSlice: CounterState }) => state.counterSlice);
+  const dispatch = useDispatch();
+  const removeProductCart = () => {
+    dispatch(removeProduct(props));
+  };
 
   let typeSize = props.types === 'вес' ? m : v;
   return (
@@ -34,9 +31,10 @@ const CartItemProduct = (props: ProductInterface & { removeFromCart: (id: string
       <div className="description__product-price">
         <div className="description__price">{+props.price} ₸</div>
         <div className="description__count count">
-          <Count />
+          <Count productId={props.id} product={product} />
         </div>
-        <button className="description__product-card product-card__btn">
+
+        <button onClick={removeProductCart} className="description__product-card product-card__btn">
           <span>
             <img src={del} alt="корзина" />
           </span>

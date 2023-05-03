@@ -1,26 +1,13 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { CatalogContext } from '../page/Catalog';
-import { ProductInterface } from '../App';
-// interface Product {
-//   id: string;
-//   title: string;
-//   category: number;
-//   price: string;
-//   imageProduct: string;
-//   manufacturer: string;
-//   brand: string;
-//   description: string;
-//   size: string;
-//   types: string;
-//   barcode: string;
-// }
+
+import { ProductInterface, CounterState } from '../types';
 
 import ProductCart from './ProductCart';
 import { useSelector } from 'react-redux';
 const CatalogBody = () => {
-//   const { products } = useContext(CatalogContext);
-const products = useSelector((state: RootState) => state.counterSlice.products);
+  const products = useSelector(
+    (state: { counterSlice: CounterState }) => state.counterSlice.products,
+  );
   console.log(products);
   return (
     <>
@@ -40,6 +27,7 @@ const products = useSelector((state: RootState) => state.counterSlice.products);
               types={product.types}
               category={product.category}
               description={product.description}
+              quality={product.quality}
             />
           ))}
         </div>
