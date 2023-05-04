@@ -29,7 +29,7 @@ const CartItemProduct = (props: ProductInterface) => {
         <div className="description__text">{props.description}</div>
       </div>
       <div className="description__product-price">
-        <div className="description__price">{+props.price} ₸</div>
+        <div className="description__price">{+props.price * props.quantity} ₸</div>
         <div className="description__count count">
           <Count productId={props.id} product={product} />
         </div>
