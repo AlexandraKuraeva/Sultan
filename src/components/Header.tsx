@@ -47,7 +47,32 @@ const Header = () => {
     console.log(event);
     event.preventDefault();
   };
+ useEffect(() => {
+   window.addEventListener('scroll', handleScroll);
+   return () => {
+     window.removeEventListener('scroll', handleScroll);
+   };
+ }, []);
 
+ const handleScroll = (): void => {
+	 const header: HTMLElement | null = document.querySelector('.header');
+   const headerCenter: HTMLElement | null = document.querySelector('.header__center');
+   const headerTop: HTMLElement | null = document.querySelector('.header__top');
+
+   if (window.innerWidth > 1190) {
+     if (header !== null && window.pageYOffset >80) {
+       header.classList.add('fixed-header');
+     } else if (header !== null) {
+       header.classList.remove('fixed-header');
+     }
+   } else {
+     if (headerTop !== null && window.pageYOffset > 80) {
+       headerTop.classList.add('fixed-header');
+     } else if (headerTop !== null) {
+       headerTop.classList.remove('fixed-header');
+     }
+   }
+ };
   return (
     <>
       <header className="header">

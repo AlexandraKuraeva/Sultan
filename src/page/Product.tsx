@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -53,6 +53,8 @@ const Product = () => {
   if (!product) {
     return <p>Загрузка данных...</p>;
   }
+  
+
   return (
     <>
       <section className="product">

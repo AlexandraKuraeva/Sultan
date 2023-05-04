@@ -4,6 +4,7 @@
 
 @import "../scss/page/Catalog.scss";
 @import "../scss/page/Product.scss";
+@import "../scss/page/Cart.scss";
 
 body {
 	height: 100%;
@@ -29,7 +30,9 @@ a {
 }
 
 main {
+	padding-top: 220px;
 	flex: 1 0 auto;
+	
 }
 
 
