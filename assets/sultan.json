@@ -30,7 +30,7 @@
   {
     "id": "2",
     "barcode": "4604049097548",
-    "imageProduct": "https://global-vitamins.ru/upload/iblock/f50/f50e96e9eda6a669f482490605bc6834.jpg",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/big2/hlr-system/422/310/602/916/102/5/100002564383b0.PNG",
     "title": "Зубная паста Доктор заяц со вкусом клубники",
     "types": "объем",
     "size": "50 мл",
@@ -44,7 +44,7 @@
   {
     "id": "3",
     "barcode": "4811230018583",
-    "imageProduct": "https://www.wbc-c.ru/system/goods/general_images/000/043/552/large/Opolaskivatel__Organicheskie_travy.jpg",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/big2/hlr-system/130/527/997/011/101/110/600004966065b0.jpeg",
     "title": "Ополаскиватель для полости рта 'Органические травы'",
     "types": "объем",
     "size": "250 мл",
@@ -58,7 +58,7 @@
   {
     "id": "4",
     "barcode": "4811230018583",
-    "imageProduct": "https://avatars.mds.yandex.net/get-mpic/1603927/img_id30998355874346674.png/9",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/big2/hlr-system/-76/863/719/211/241/856/100029630744b0.jpg",
     "title": "Мексидол Дент Профешнл",
     "types": "объем",
     "size": "250 мл",
@@ -72,7 +72,7 @@
   {
     "id": "5",
     "barcode": "4604049097548",
-    "imageProduct": "https://cdn.poryadok.ru/upload/iblock/f70/f7098190954478ee04d4ffbb6c855b62.jpg",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/big2/hlr-system/689/966/096/716/128/600008236269b0.jpeg",
     "title": "Шампунь Schauma Объем и Свежесть ",
     "types": "объем",
     "size": "380 мл",
@@ -86,7 +86,7 @@
   {
     "id": "6",
     "barcode": "4604049097548",
-    "imageProduct": "https://www.baris-online.ru/upload/iblock/09e/09e99c56f7d696a84e23d8330839807e.jpeg",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/big2/hlr-system/-16/956/195/771/220/202/9/100000889960b0.jpg",
     "title": "Шампунь для волос TIMOTEI",
     "types": "объем",
     "size": "400 мл",
@@ -114,7 +114,7 @@
   {
     "id": "8",
     "barcode": "460404908",
-    "imageProduct": "https://myata-shop.com/wp-content/uploads/2021/04/dbbc46c3969c11eba546f80dac0a57e0_f62e4b6ca1c211eba548f80dac0a57e0.jpg",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/big2/hlr-system/344/568/199/523/124/7/600001232461b0.jpg",
     "title": "OZ! Крем для тела антицеллюлитный ",
     "types": "объем",
     "size": "250 мл",
@@ -128,7 +128,7 @@
   {
     "id": "9",
     "barcode": "46440404908",
-    "imageProduct": "https://alania-market.ru/image/cache/catalog/sredstva-dlya-vannoy-i-dusha/skraby-pilingi/9/11472836-1-640x640.jpeg",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/big2/hlr-system/122/303/694/412/231/543/100002571297b0.jpg",
     "title": "Скраб для тела Чистая Линия Фитосалон",
     "types": "объем",
     "size": "200 мл",
@@ -142,7 +142,7 @@
   {
     "id": "10",
     "barcode": "46440404908",
-    "imageProduct": "https://tvoydom.ru/photos/1001754199/1001754199.jpg",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/big2/hlr-system/-26/544/818/810/191/322/100043877220b0.jpg",
     "title": "Ночной крем для рук Бархатные ручки",
     "types": "объем",
     "size": "45 мл",
@@ -156,10 +156,10 @@
   {
     "id": "11",
     "barcode": "4226440404908",
-    "imageProduct": "https://avatars.mds.yandex.net/get-mpic/1943683/img_id1669561568327582667.jpeg/9",
-    "title": "Крем для рук",
-    "types": "объем",
-    "size": "88 мл",
+    "imageProduct": "https://main-cdn.sbermegamarket.ru/big2/hlr-system/743/741/299/527/182/1/100032079823b0.jpg",
+    "title": "Мыло для рук",
+    "types": "масса",
+    "size": "88 гр",
     "price": "192",
     "quantity": 1,
     "description": "Крем для рук с легким изысканным обволакивающим ароматом предназначен для ежедневного использования. Активные вещества, эфирное масло и экстракт лаванда, витамин Е, натуральный бетаин: окутают Вашу кожу заботой: смягчат, увлажнят и бережно восстановят защитные функции кожи, защитят от вредного воздействия окружающей среды. ",
