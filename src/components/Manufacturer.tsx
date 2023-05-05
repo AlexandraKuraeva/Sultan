@@ -107,7 +107,7 @@ const Manufacturer = () => {
             placeholder="Поиск..."
             onChange={(event) => handleInputChange(event)}
           />
-          <button type="button" className="search-box__btn">
+          <button type="button" className="search-box__btn button-hover">
             <img src={search} alt="поиск" />
           </button>
         </div>

@@ -130,7 +130,9 @@
 
 	// .filter-prop__categories
 
-	&__categories {
+	&__categories li{
+		margin: 15px 0px ;
+		
 	}
 
 	// .filter-prop__category

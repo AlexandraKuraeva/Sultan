@@ -78,10 +78,7 @@ const Product = () => {
                   <div className="description__count count">
                     <Count product={product} productId={product.id} />
                   </div>
-                  <button
-                    onClick={onClickAdd}
-                    className="description__product-card product-card__btn"
-                  >
+                  <button onClick={onClickAdd} className="product-card__btn button-hover">
                     В КОРЗИНУ
                     <span>
                       <img src={basket} alt="корзина" />

@@ -67,6 +67,10 @@ export const cartSlice = createSlice({
         state.items.splice(productIndex, 1);
       }
     },
+	 clearCart:(state, action)=>{
+		console.log("очистить корзину")
+		state.items=action.payload
+	 }
   },
 });
 
@@ -77,6 +81,7 @@ export const {
   incrementQuantityCart,
   decrementQuantityCart,
   getCartTotal,
+  clearCart,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -18,7 +18,7 @@ const CartItemProduct = (props: ProductInterface) => {
   return (
     <>
       <div className="cart-product__wrapper">
-        <img src={props.imageProduct} alt="изображение товара" className="cart-product__img"/>
+        <img src={props.imageProduct} alt="изображение товара" className="cart-product__img" />
         <div className="cart-product__description description">
           <div className="description__volum-weight">
             <span>
@@ -30,14 +30,16 @@ const CartItemProduct = (props: ProductInterface) => {
           <div className="description__text">{props.description}</div>
         </div>
         <div className="description__product-price">
-          <div className="description__price">{+props.price * props.quantity} ₸</div>
+          <div className="description__separator"></div>
           <div className="description__count count">
             <Count productId={props.id} product={product} />
           </div>
-
+          <div className="description__separator"></div>
+          <div className="description__price">{+props.price * props.quantity} ₸</div>
+          <div className="description__separator"></div>
           <button
             onClick={removeProductCart}
-            className="description__product-card product-card__btn"
+            className="description__product-card button-hover"
           >
             <span>
               <img src={del} alt="корзина" />

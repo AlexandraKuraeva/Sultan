@@ -1,6 +1,5 @@
 .catalog-sort {
 	position: relative;
-	// .catalog-sort__placeholder
 
 	&__placeholder {
 		font-size: 16px;
@@ -14,8 +13,6 @@
 		}
 	}
 
-	// .catalog-sort__popup
-
 	&__popup {
 		position: absolute;
 		top: 21px;
@@ -25,12 +22,20 @@
 		box-shadow: 0px 0px 1px 1px #ecd59d;
 		& li:hover {
 			cursor: pointer;
-			font-weight: 600;
-			color: #ffc85e;
+
+			color: #cd9118;
 		}
 	}
 }
-.container {
+.sort {
+	padding: 10px;
+	&:hover {
+	}
+
+	&.active {
+		border-radius: 30px;
+		color: #e4b454;
+	}
 }
 .active {
 }

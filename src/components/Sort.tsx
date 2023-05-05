@@ -27,7 +27,7 @@ const Sort = () => {
               {list.map((category, index: number) => (
                 <li
                   key={category}
-                  className={sortType === index ? 'menu__category  active' : 'menu__category'}
+                  className={sortType === index ? 'sort  active' : 'sort'}
                   onClick={() => handleSortChange(index)}
                 >
                   {category}

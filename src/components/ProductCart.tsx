@@ -93,7 +93,7 @@ const ProductCart: React.FC<ProductInterface> = ({
           </div>
           <div className="product-card__footer">
             <p className="product-card__price">{price} ₸</p>
-            <button onClick={onClickAdd} className="product-card__btn">
+            <button onClick={onClickAdd} className="product-card__btn button-hover">
               В КОРЗИНУ
               <span>
                 <img src={basket} alt="корзина" />

@@ -60,10 +60,12 @@ const Header = () => {
    const headerTop: HTMLElement | null = document.querySelector('.header__top');
 
    if (window.innerWidth > 1190) {
-     if (header !== null && window.pageYOffset >80) {
+     if (header !== null && window.pageYOffset > 80 && headerTop !== null) {
        header.classList.add('fixed-header');
-     } else if (header !== null) {
+       headerTop.classList.remove('fixed-header');
+     } else if (header  !== null) {
        header.classList.remove('fixed-header');
+       
      }
    } else {
      if (headerTop !== null && window.pageYOffset > 80) {
@@ -79,7 +81,11 @@ const Header = () => {
         <div className="header__top">
           <div className="container">
             <div className="header__top-inner">
-              <button className="header__burger" onClick={handleBurgerClick} data-open={showMenu}>
+              <button
+                className="header__burger button-hover"
+                onClick={handleBurgerClick}
+                data-open={showMenu}
+              >
                 <span className="toggler"></span>
               </button>
               <div className="header__left">
@@ -153,7 +159,7 @@ const Header = () => {
                 </nav>
               </div>
 
-              <Link to="/cart" className="cart__link cart">
+              <Link to="/cart" className="cart__link ">
                 <span className="cart__icon">
                   <img src={cart} alt="корзина" />
                 </span>
@@ -172,7 +178,7 @@ const Header = () => {
                     <img src={logoSvg} alt="logo" />
                   </a>
                 </div>
-                <Link to="/" className="header__center-btn-catalog btn">
+                <Link to="/" className="header__center-btn-catalog btn button-hover">
                   Каталог
                   <span>
                     <img src={frame} alt="каталог" />
@@ -181,7 +187,7 @@ const Header = () => {
                 <form className=" header__center-search search-box">
                   <div className="search-box__wrapper">
                     <input type="search" className="search-box__input " placeholder="Поиск..." />
-                    <button type="button" className="search-box__btn">
+                    <button type="button" className="search-box__btn button-hover">
                       <img src={search} alt="поиск" />
                     </button>
                   </div>
@@ -201,23 +207,23 @@ const Header = () => {
                   <img src={callImg} alt="контентное изображение" className="call__img" />
                 </div>
 
-                <button className="header__center-btn-price btn">
+                <button className="header__center-btn-price btn button-hover">
                   Прайс-лист
                   <span>
                     <img src={price} />
                   </span>
                 </button>
                 <Link to="/cart" className="header__cart-box">
-                  <div className="cart__link cart">
+                  <div className="cart__link">
                     <span className="cart__icon">
                       <img src={cart} alt="корзина" />
                     </span>
                     <div className="cart__count">{totalQuantity}</div>
                   </div>
                   <div className="cart__wrap">
-                    <p className="cart__title">Корзина</p>
+                    <p className="cart__subtitle">Корзина</p>
                     <p className="cart__sum">
-                      <b>{totalPrice} ₽</b>
+                      <b>{totalPrice} ₸</b>
                     </p>
                   </div>
                 </Link>
@@ -304,7 +310,7 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
-              <button className="header__center-btn-price btn">
+              <button className="header__center-btn-price btn button-hover">
                 Прайс-лист
                 <span>
                   <img src={price} alt="прайс-лист" />

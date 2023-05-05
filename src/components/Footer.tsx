@@ -18,7 +18,7 @@ const Footer = () => {
                 <a href="!#">
                   <img src={logo} alt="logo" />
                 </a>
-                <button className="description__btn btn">
+                <button className="description__btn btn button-hover">
                   Прайс-лист
                   <span>
                     <img src={price} alt="Прайс-лист" />
@@ -42,7 +42,7 @@ const Footer = () => {
                     className="search-box__input description__input "
                     placeholder="Введите ваш E-mail"
                   />
-                  <button type="button" className="search-box__btn ">
+                  <button type="button" className="search-box__btn button-hover">
                     <img src={arrow1} alt="e-mail" />
                   </button>
                 </div>
@@ -93,7 +93,7 @@ const Footer = () => {
               <div className="footer__price-contacts">
                 <div className="footer-price">
                   <h5 className="footer-price__title">Скачать прайс-лист:</h5>
-                  <button className="footer-price__btn btn">
+                  <button className="footer-price__btn btn button-hover">
                     Прайс-лист
                     <span>
                       <img src={price} alt="Прайс-лист" />

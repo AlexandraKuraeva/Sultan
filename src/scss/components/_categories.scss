@@ -13,20 +13,19 @@
 	// .menu__category
 
 	&__category {
-		padding: 10px ;
-		&:hover{
-		
-			border-radius: 30px;
-			background-color: rgba(255, 201, 101, 0.268);
+		margin-right: 11px;
+		border-radius: 30px;
+		box-shadow: 0 0 10px 5px #0000000f;
+		cursor: pointer;
+		padding: 18px 15px;
+		transition-duration: 0.3s;
+		&:hover {
+			background: #fdd88f63;
 		}
-		
+
 		&.active {
-		
-			border-radius: 30px;
-			background-color: rgba(245, 169, 29, 0.743);
-			& a{
-				color: #fff;
-			}
+			border-radius: 10px;
+			background: #ffc85e;
 		}
 	}
 
